@@ -2,7 +2,8 @@
 # If you want to see the full configuration, please check `full-config.toml` .
 # And see https://gohugo.io/getting-started/configuration/ .
 
-baseURL = "http://localhost:1313/"
+# baseURL = "http://localhost:1313/"
+baseURL = "http://pawsen.github.io/"
 title = "Notes about things"
 enableRobotsTXT = true
 enableEmoji = true
