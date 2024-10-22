@@ -35,7 +35,20 @@
                 '("wav" "raw" "epub")))
 
   (print org-hugo-external-file-extensions-allowed-for-copying)
- 
+
+  (print "setting org-attach-id-dir" )
+  ;; "Sets up org's attachment system."
+  ;; see doom emacs org-attch initialization
+  (setq
+   org-attach-store-link-p 'attached     ; store link after attaching files
+   org-attach-use-inheritance t ; inherit properties from parent nodes
+   org-attach-id-dir (expand-file-name ".attach/" default-directory))
+
+  (message "default-directory %s" default-directory)
+
+  ;; (setq-default org-attach-id-dir (expand-file-name ".attach/" org-directory))
+  (message "org-attach-id-dir set to `%s'." org-attach-id-dir)
+
   (let ((org-id-extra-files (directory-files-recursively default-directory "notes")))
     (dolist (f (append (file-expand-wildcards "org/about.org")
                        (file-expand-wildcards "org/diary/*.org")
